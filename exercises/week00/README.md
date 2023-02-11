@@ -9,3 +9,17 @@
 2. `pyspark` 명령어를 실행해 Jupyter Notebook이 실행되는지 확인합니다.
   * 에러 발생 시 `export JAVA_HOME=$(/usr/libexec/java_home -v 11);`, `export PYSPARK_SUBMIT_ARGS="--master local[2] pyspark-shell"` 설정을 추가해줍니다.
   * `export JAVA_HOME=$(/usr/libexec/java_home -v 11);` 명령어는 Java 11 버전이 설치되어 있음을 가정하므로, 로컬에 Java 11 버전이 설치되어 있지 않다면 설치해줘야 합니다.
+
+
+
+## 예시
+vim ~/.bash_profile
+```
+export SPARK_HOME=/Users/anchangbae/spark/spark-3.3.1-bin-hadoop3/
+export PATH=$SPARK_HOME/bin:$PATH
+export PYSPARK_DRIVER_PYTHON=jupyter
+export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
+```
+source ~/.bash_profile
+
+*[Java 11 버전 링크](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html)
